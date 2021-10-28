@@ -22,6 +22,11 @@ export class UsersService{
   public getUser(getUser: GetUserArgs): User{
     return this.users.find(u => u.userId === getUser.userId);
   }
+
+  // get user by email, is required because for login purpose 
+  public getUserByEmail(email: string): User{
+    return this.users.find(u => u.email = email);
+  }
   public getUsers(getUsers: GetUsersArgs): User[]{
     return getUsers.userIds.map(userId => this.getUser({userId}))
   }

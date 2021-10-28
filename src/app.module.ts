@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import {GraphQLModule} from '@nestjs/graphql'
 import { UsersModule } from './users/users.module';
 import { UsersResolvers } from './users/users.resolvers';
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     GraphQLModule.forRoot(
@@ -9,7 +10,8 @@ import { UsersResolvers } from './users/users.resolvers';
         autoSchemaFile: true,
       }
     ),
-    UsersModule
+    UsersModule,
+    AuthModule
   ],
   controllers: [],
   providers: []
